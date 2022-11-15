@@ -71,7 +71,7 @@ sex_hyp = pd.crosstab(index = births["hyp"], columns = births["sex"])
 print("Two way frequency table between hypertension and sex: \n", sex_hyp, "\n")
 
 #create a new binary column for a score of >150
-#need to keep the NaNs in so that teh aggregate calculation is correct
+#need to keep the NaNs in so that the aggregate calculation is correct
 births["highscore"] = births['score'].apply(lambda x: np.nan if pd.isnull(x) else "Yes" if x >= 150 else "No")
 print("check that the NaNs have been kept: \n", births.head(),'\n', births.tail())
 
@@ -85,7 +85,7 @@ bweight = births['bweight'].to_numpy()
 gestwks = births['gestwks'].to_numpy()
 fig, ax = plt.subplots()
 plt.grid()
-ax.scatter(gestwks, bweight, alpha=0.5)
+ax.scatter(gestwks, bweight, alpha=0.3)
 ax.set_xlabel('Gestational weeks')
 ax.set_ylabel('Birth weight (g)')
 ax.set_title('')

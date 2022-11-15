@@ -2,10 +2,12 @@
 #programming project code
 #
 
+#Please uncomment the packages and run if you do not have them installed in R
+# install.packages("tidyverse")
+# install.packages("ggplot2")
+
 library(rstudioapi) 
-library(arsenal)
 library(tidyverse)
-library(Epi)
 library(ggplot2)
 
 
@@ -102,5 +104,5 @@ ggsave("bweight_plot_r.pdf")
 
 #write the final data to a csv
 
-write.csv(births, "births_output_r.csv", )
+write.csv(births, "births_output_r.csv")
 
