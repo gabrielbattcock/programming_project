@@ -1,5 +1,6 @@
+#candidate number: 221352
 #Programming assessment 2022
-#candidate number: 
+
 #python code
 
 import pandas as pd
@@ -34,15 +35,16 @@ print("Check that the third value with NA has been dropped: \n", births.head())
 births = pd.merge(births, score, how = 'outer')
 print("The new data set comprising both the trasnformed births data and the score: \n",
     births.head(), "\n",
-    births.tail()
+    births.tail(), "\n"
 )
+print("As we have used an out join and there are some missing score values, some IDs contain a null score field. \n")
 
 #reordering by score ascending
 births = births.sort_values('score')
 print("Check that the head is ordered by score: \n", births.head())
 
 
-#check the correlation between continuous variables
+#check the correlation between continuous variables 
 corr_births = births[['bweight','gestwks','matage','score']].copy()
 correlation = corr_births.corr()
 
@@ -71,7 +73,7 @@ print("Two way frequency table between hypertension and sex: \n", sex_hyp, "\n")
 #create a new binary column for a score of >150
 #need to keep the NaNs in so that teh aggregate calculation is correct
 births["highscore"] = births['score'].apply(lambda x: np.nan if pd.isnull(x) else "Yes" if x >= 150 else "No")
-print(births.head(),'\n', births.tail())
+print("check that the NaNs have been kept: \n", births.head(),'\n', births.tail())
 
 #aggreagated version of data set with average birthweight by highscore and sex
 aggregate = births.groupby(['sex','highscore']).agg({'bweight':'mean'})
