@@ -10,6 +10,19 @@ README file for HDS Programming course 2022
     The output files are  titled "births_output_r.csv", 'births_output_py.csv", "bweight_plot_r.pdf" and "bweight_plot_py.pdf", and they will 
     saved in the same directory as the source files.
 
+-- Required software --
+
+- R Script - 
+    
+    Run the R script in RStudio. See below for how to run the file.
+
+- Python script - 
+
+    Run the .py script in either a Python IDE (such as Spyder accessible through Anaconda Navigator),
+    or through your command line. 
+
+    If using command line, run the line "python python_script.py" in the directory the file is saved in. 
+
 -- How to read and run the scripts --
 
 - R script -
